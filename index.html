@@ -731,9 +731,13 @@
 
     function applyBackground() {
       if (customBackground) {
-        document.body.style.backgroundImage = "linear-gradient(var(--overlay), var(--overlay)), url('" + customBackground + "')";
+        document.body.style.setProperty(
+          "background-image",
+          "linear-gradient(var(--overlay), var(--overlay)), url('" + customBackground + "')",
+          "important"
+        );
       } else {
-        document.body.style.backgroundImage = "";
+        document.body.style.removeProperty("background-image");
       }
       updateBackgroundPreview();
     }
