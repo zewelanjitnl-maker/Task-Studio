@@ -1,0 +1,17 @@
+{
+  "name": "Task Studio",
+  "short_name": "Task Studio",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f6f0e6",
+  "theme_color": "#d97706",
+  "description": "An interactive to-do workspace with reminders, task editing, and custom backgrounds.",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
