@@ -1,20 +1,26 @@
 {
-  "version": "0.2.0",
-  "configurations": [
-    {
-        "name": "Attach to Chrome",
-        "port": 9222,
-        "request": "attach",
-        "type": "chrome",
-        "webRoot": "${workspaceFolder}"
-    },
-
-    {
-      "name": "Launch Chrome against localhost",
-      "type": "chrome",
-      "request": "launch",
-      "url": "http://localhost:3000",
-      "webRoot": "${workspaceFolder}"
-    }
-  ]
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Attach to Chrome",
+            "port": 9222,
+            "request": "attach",
+            "type": "chrome",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "name": "Launch Chrome against localhost",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Open index.html",
+            "file": "${workspaceFolder}/index.html",
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
 }
