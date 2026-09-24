@@ -385,6 +385,7 @@
       min-height: 1.4em;
     }
 
+    /* --- Mobile drawer controls (hidden on desktop) --- */
     .menu-btn {
       display: none;
       align-items: center;
@@ -423,6 +424,7 @@
         width: 100%;
       }
 
+      /* Sticky top bar shown only on mobile, with hamburger + title */
       .mobile-topbar {
         display: flex;
         align-items: center;
@@ -440,6 +442,7 @@
         margin: 0;
       }
 
+      /* Sidebar becomes an off-canvas drawer */
       .sidebar {
         position: fixed;
         top: 0;
@@ -459,6 +462,8 @@
         transform: translateX(0);
       }
 
+      /* The h1/subtitle block inside sidebar is redundant on mobile since
+         the mobile topbar already shows the title, so hide it there */
       .sidebar > .sidebar-heading {
         display: none;
       }
