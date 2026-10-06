@@ -55,6 +55,21 @@
       --overlay: rgba(2, 6, 23, 0.48);
     }
 
+    /* When a custom background is active, panels go much more transparent
+       so the wallpaper is actually visible through the whole UI, not just
+       around the edges of the app shell. */
+    body.has-bg {
+      --panel: rgba(255, 249, 240, 0.32);
+      --panel-strong: rgba(255, 255, 255, 0.4);
+      --overlay: rgba(15, 23, 42, 0.12);
+    }
+
+    body.dark.has-bg {
+      --panel: rgba(17, 24, 39, 0.4);
+      --panel-strong: rgba(15, 23, 42, 0.5);
+      --overlay: rgba(2, 6, 23, 0.25);
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -155,6 +170,7 @@
       border-radius: 20px;
       padding: 20px;
       box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(10px);
     }
 
     .panel-title {
@@ -292,6 +308,7 @@
       padding: 18px;
       background: var(--panel-strong);
       border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
     }
 
     .stat-label {
@@ -327,6 +344,7 @@
       border-radius: 18px;
       background: var(--panel-strong);
       border: 1px solid var(--border);
+      backdrop-filter: blur(10px);
     }
 
     .task-card.done {
@@ -855,18 +873,12 @@
         );
         document.body.style.setProperty("background-size", "cover", "important");
         document.body.style.setProperty("background-position", "center", "important");
-        appEl.style.setProperty(
-          "background",
-          document.body.classList.contains("dark")
-            ? "rgba(15, 23, 42, 0.45)"
-            : "rgba(255, 249, 240, 0.35)",
-          "important"
-        );
+        document.body.classList.add("has-bg");
       } else {
         document.body.style.removeProperty("background-image");
         document.body.style.removeProperty("background-size");
         document.body.style.removeProperty("background-position");
-        appEl.style.removeProperty("background");
+        document.body.classList.remove("has-bg");
       }
       updateBackgroundPreview();
     }
